@@ -4,12 +4,15 @@ async function loadTodos() {
     const todos = await response.json();
 
     const todoList = document.getElementById('todoList');
-    todoList.innerHTML = '';  // Liste zurücksetzen
+    todoList.innerHTML = '';
 
     // Jedes To-Do-Item anzeigen
     todos.forEach(todo => {
         const todoItem = document.createElement('div');
         todoItem.classList.add('todo-item');
+
+        const img = document.createElement('img');
+        img.src = todo.imgLink;
 
         const title = document.createElement('span');
         title.textContent = todo.title;
@@ -18,31 +21,42 @@ async function loadTodos() {
         deleteButton.textContent = 'Löschen';
         deleteButton.onclick = () => deleteTodo(todo.id);
 
+
         todoItem.appendChild(title);
+        todoItem.appendChild(img);
         todoItem.appendChild(deleteButton);
         todoList.appendChild(todoItem);
     });
 }
 
+const imgList = {
+   "lernen": "static/img/emotion-1740913_640.png"
+};
+
 // Funktion zum Hinzufügen eines neuen To-Do-Items
 async function addTodo() {
-    const title = document.getElementById('todoTitle').value;
+    let title = document.getElementById('todoTitle').value;
     if (title.trim() === '') return alert('Bitte einen Titel eingeben');
+
+
+    title = title.toLowerCase();
+
+    const img = imgList[title] || "static/img/emoticon-1610573_640.png";
 
     await fetch('/api/todos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, completed: false })
+        body: JSON.stringify({ title, completed: false, imgLink: img })
     });
 
-    document.getElementById('todoTitle').value = '';  // Eingabefeld leeren
-    loadTodos();  // Liste neu laden
+    document.getElementById('todoTitle').value = '';
+    loadTodos();
 }
 
 // Funktion zum Löschen eines To-Do-Items
 async function deleteTodo(id) {
     await fetch(`/api/todos/${id}`, { method: 'DELETE' });
-    loadTodos();  // Liste neu laden
+    loadTodos();
 }
 
 // Beim Laden der Seite die To-Do-Liste laden

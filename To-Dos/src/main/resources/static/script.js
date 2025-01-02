@@ -30,7 +30,7 @@ async function loadTodos() {
 }
 
 const imgList = {
-   "lernen": "/img/emotion-1740913_640.png"
+   "learn": "/img/emotion-1740913_640.png"
 };
 
 // Funktion zum Hinzufügen eines neuen To-Do-Items

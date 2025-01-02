@@ -30,7 +30,7 @@ async function loadTodos() {
 }
 
 const imgList = {
-   "lernen": "static/img/emotion-1740913_640.png"
+   "lernen": "/img/emotion-1740913_640.png"
 };
 
 // Funktion zum Hinzufügen eines neuen To-Do-Items
@@ -41,7 +41,7 @@ async function addTodo() {
 
     title = title.toLowerCase();
 
-    const img = imgList[title] || "static/img/emoticon-1610573_640.png";
+    const img = imgList[title] || "/img/emoticon-1610573_640.png";
 
     await fetch('/api/todos', {
         method: 'POST',

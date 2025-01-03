@@ -31,14 +31,14 @@ async function loadTodos() {
 
 const imgList = {
    "learn": "/img/emotion-1740913_640.png",
-   "sleep": "/img/sleep.svg"
+   "sleep": "/img/sleep.svg",
+   "go shopping": "/img/vegan-einkaufen-e1551709877323.jpg"
 };
 
 // Funktion zum Hinzufügen eines neuen To-Do-Items
 async function addTodo() {
     let title = document.getElementById('todoTitle').value;
     if (title.trim() === '') return alert('Bitte einen Titel eingeben');
-
 
     title = title.toLowerCase();
 

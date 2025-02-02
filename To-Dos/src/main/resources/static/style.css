@@ -1,13 +1,27 @@
 /* Einfache Styles für die Darstellung */
+/* Einfache Styles für die Darstellung */
 body {
     font-family: Arial, sans-serif;
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: blue;
+    background-color: rgb(51, 23, 63);
+    color: rgb(110, 247, 247);
+    overflow:hidden
 }
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 .main-div{
-margin:
+    border: 0.1rem solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(32, 9, 53, 0.689);
+    box-shadow: 5px 5px wheat;
 }
 
 h1 {
@@ -15,11 +29,38 @@ h1 {
 }
 
 .todo-item {
+    margin: 10px;
     display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     border: 2px solid black;
-    background-color: yellow;
+    background-color: rgb(34, 5, 48);
+    color: rgb(110, 247, 247);
+}
+button {
+    background-color: rgb(71, 27, 130);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 25%;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb(110, 247, 247);
+}
+button:hover{
+    background-color: rgb(61, 15, 58);
+    border: 0.2rem solid whitesmoke;
+    color: antiquewhite;
+}
+#todoTitle{
+    width: 70%;
+    border: none;
+    padding: 10px;
+    color: rgb(27, 14, 59);
+    font-size: 1.2em;
+    border-radius: 10px;
 }
 
 .todo-item button {
@@ -29,6 +70,7 @@ h1 {
     cursor: pointer;
     padding: 5px 10px;
     max-height: 100px;
+    color: rgb(110, 247, 247);
 }
 .todo-item img {
     border: none;
@@ -39,4 +81,7 @@ h1 {
     border: none;
     padding: 5px 10px;
     max-height: 100px;
+    color: rgb(110, 247, 247);
+    font-size: 40px;
+
 }

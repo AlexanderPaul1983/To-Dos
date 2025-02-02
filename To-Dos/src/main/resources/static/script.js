@@ -1,4 +1,3 @@
-// Funktion zum Laden der To-Do-Items
 async function loadTodos() {
     const response = await fetch('/api/todos');
     const todos = await response.json();
@@ -18,7 +17,7 @@ async function loadTodos() {
         title.textContent = todo.title;
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Löschen';
+        deleteButton.textContent = 'Delete';
         deleteButton.onclick = () => deleteTodo(todo.id);
 
 
@@ -39,7 +38,7 @@ const imgList = {
 // Funktion zum Hinzufügen eines neuen To-Do-Items
 async function addTodo() {
     let title = document.getElementById('todoTitle').value;
-    if (title.trim() === '') return alert('Bitte einen Titel eingeben');
+    if (title.trim() === '') return alert('You have forgotten the titel, you potato!');
 
     title = title.toLowerCase();
 
@@ -63,3 +62,4 @@ async function deleteTodo(id) {
 
 // Beim Laden der Seite die To-Do-Liste laden
 document.addEventListener('DOMContentLoaded', loadTodos);
+

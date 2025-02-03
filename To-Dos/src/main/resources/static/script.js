@@ -30,10 +30,11 @@ async function loadTodos() {
 }
 
 const imgList = {
-   "learn": "/img/emotion-1740913_640.png",
+   "learn": "/img/probe.png",
    "sleep": "/img/sleep.svg",
    "go shopping": "/img/vegan-einkaufen-e1551709877323.jpg",
-   "clean up the room": "/img/sweep-6391_256.gif"
+   "clean up the room": "/img/sweep-6391_256.gif",
+   "h": "/img/probe.png"
 };
 
 // Funktion zum Hinzufügen eines neuen To-Do-Items

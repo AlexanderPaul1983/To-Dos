@@ -1,7 +1,7 @@
 const canvas = document.getElementById('bubbleCanvas');
 const ctx = canvas.getContext('2d');
 
-// Passe die Canvas-Größe an das Browserfenster an
+//
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;

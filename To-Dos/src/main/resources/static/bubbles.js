@@ -28,6 +28,7 @@ class Bubble {
     ctx.fill();
     ctx.closePath();
   }
+  //Probe
 
   // Aktualisiert die Position und sorgt für "Hin-und-Her"-Bewegung (Bounce-Effekt)
   update() {

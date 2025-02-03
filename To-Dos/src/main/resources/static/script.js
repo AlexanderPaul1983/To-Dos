@@ -41,7 +41,8 @@ async function addTodo() {
     let title = document.getElementById('todoTitle').value;
     if (title.trim() === '') return alert('You have forgotten the titel, you potato!');
 
-    title = title.toLowerCase();
+    title = title.trim().replace(/\s+/g, ' ').toLowerCase();
+
 
     const img = imgList[title] || "/img/emoticon-1610573_640.png";
 
